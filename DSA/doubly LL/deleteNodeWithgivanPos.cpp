@@ -20,7 +20,7 @@ cout<<"delete node :"<<val<<" ";
               }
 };
 
-void insertAttail(Node*&tail,int val){
+void insertAttail(Node* &tail,int val){
              
                Node*newnode=new Node(val);
                tail->next=newnode;
@@ -46,18 +46,19 @@ void disp(Node*&head){
                 } 
                     int c=1;
                     Node*temp=head;
-             while(c<pos-2){
+             while(c<pos-1){
                    temp=temp->next;
                    c++;
 
              }
-            //  cout<<temp->data<<"--"<<endl;
+            cout<<temp->data<<"--"<<endl;
 
              Node*temp1=temp->next;
 
              temp->next=temp1->next;
              temp1->next->prev=temp;
              temp1->next=NULL;
+            //  temp1->next->prev=NULL;
              delete temp1;             
  }
 
@@ -82,7 +83,8 @@ disp(head);
 //   deleteAtpos(head,tail,5);
 //   cout<<endl;
 //   disp(head);
-  deleteAtpos(head,tail,6);
+//-------------------ERROR LAST NODE NOT DELETE-----------
+  deleteAtpos(head,tail,5);
   cout<<endl;
   disp(head);
   
